@@ -1,0 +1,16 @@
+[0m[[0m[31merror[0m] [0m[0m/home/dguna/wqp/wine-quality-prediction/src/main/scala/winequalityprediction/S3Uploader.scala:31:21: not found: value GetObjectRequest[0m
+[0m[[0m[31merror[0m] [0m[0m      val request = GetObjectRequest.builder()[0m
+[0m[[0m[31merror[0m] [0m[0m                    ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/dguna/wqp/wine-quality-prediction/src/main/scala/winequalityprediction/S3Uploader.scala:32:17: not found: value bucketName[0m
+[0m[[0m[31merror[0m] [0m[0m        .bucket(bucketName)[0m
+[0m[[0m[31merror[0m] [0m[0m                ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/dguna/wqp/wine-quality-prediction/src/main/scala/winequalityprediction/S3Uploader.scala:33:14: not found: value objectKey[0m
+[0m[[0m[31merror[0m] [0m[0m        .key(objectKey)[0m
+[0m[[0m[31merror[0m] [0m[0m             ^[0m
+[0m[[0m[31merror[0m] [0m[0m/home/dguna/wqp/wine-quality-prediction/src/main/scala/winequalityprediction/S3Uploader.scala:39:18: overloaded method value getObject with alternatives:[0m
+[0m[[0m[31merror[0m] [0m[0m  (x$1: com.amazonaws.services.s3.model.GetObjectRequest,x$2: java.io.File)com.amazonaws.services.s3.model.ObjectMetadata <and>[0m
+[0m[[0m[31merror[0m] [0m[0m  (x$1: String,x$2: String)com.amazonaws.services.s3.model.S3Object[0m
+[0m[[0m[31merror[0m] [0m[0m cannot be applied to (<error>, java.nio.file.Path)[0m
+[0m[[0m[31merror[0m] [0m[0m        s3Client.getObject(request, new File(localFilePath).toPath)[0m
+[0m[[0m[31merror[0m] [0m[0m                 ^[0m
+[0m[[0m[31merror[0m] [0m[0mfour errors found[0m
