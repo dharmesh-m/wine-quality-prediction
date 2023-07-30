@@ -1,6 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/home/dguna/wqp/wine-quality-prediction/training/src/main/scala/winequalityprediction/Main.scala:95:19: type mismatch;[0m
-[0m[[0m[31merror[0m] [0m[0m found   : Double[0m
-[0m[[0m[31merror[0m] [0m[0m required: org.apache.spark.sql.types.DoubleType[0m
-[0m[[0m[31merror[0m] [0m[0m    uploadF1Score(f1Score, s"data/$modelVersion/F1Score", s"models/$modelVersion/F1Score")[0m
-[0m[[0m[31merror[0m] [0m[0m                  ^[0m
-[0m[[0m[31merror[0m] [0m[0mone error found[0m
