@@ -1,3 +1,5 @@
 training/output/*
 training/project/*
 training/target/*
+inference/project/*
+inference/target/*

@@ -1,3 +1,5 @@
+package edu.njit.cs643.dmg56
+
 import com.amazonaws.auth.profile.ProfileCredentialsProvider
 import com.amazonaws.client.builder.AwsClientBuilder
 import com.amazonaws.services.s3.{AmazonS3, AmazonS3ClientBuilder}

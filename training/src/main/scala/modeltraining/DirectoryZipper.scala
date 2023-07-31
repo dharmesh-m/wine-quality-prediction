@@ -1,3 +1,5 @@
+package edu.njit.cs643.dmg56
+
 import java.io.{File, FileInputStream, FileOutputStream}
 import java.nio.file.{Files, Path, Paths, SimpleFileVisitor, FileVisitResult}
 import java.nio.file.attribute.BasicFileAttributes

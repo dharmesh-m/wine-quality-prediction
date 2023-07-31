@@ -1,3 +1,5 @@
+package edu.njit.cs643.dmg56
+
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import Constants.WINE_QUALITY_PREDICTION_MODEL_FILE_NAME
