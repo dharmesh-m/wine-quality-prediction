@@ -49,11 +49,14 @@ def load_csv_data(spark, data_source):
     
     return data
 
-def predict_wine_quality(data_source, output_uri, validation_data_source):
+def predict_wine_quality(data_source, output_uri):
     with SparkSession.builder.appName("Train Wine Quality Prediction Model").getOrCreate() as spark:
         if data_source is not None:
             # Read the CSV file
             training_data = load_csv_data(spark, data_source)
+
+            # Split the data into training and test sets
+            training_data, test_data = training_data.randomSplit([0.7, 0.3])
 
             # Prepare the features and label columns for training
             feature_cols = training_data.columns[:-1]
@@ -73,16 +76,18 @@ def predict_wine_quality(data_source, output_uri, validation_data_source):
 
             print("Model Training Completed")
 
-        if validation_data_source is not None:
-            # Make predictions on the validation data
-            validation_data = load_csv_data(spark, validation_data_source)
-            predictions = model.transform(validation_data)
+            # Make predictions from test data
+            predictions = model.transform(test_data)
 
             # Evaluate the model with F1-score
             evaluator = MulticlassClassificationEvaluator(labelCol=LABEL, predictionCol="prediction", metricName="f1")
             f1_score = evaluator.evaluate(predictions)
 
             print(f"F1 Score: {f1_score}")
+            rdd = spark.sparkContext.parallelize([f"{f1_score}"])
+
+            # Write RDD to S3 as a text file
+            rdd.coalesce(1).saveAsTextFile(f"{output_uri}/F1Score")
 
 
 if __name__ == "__main__":
@@ -91,8 +96,6 @@ if __name__ == "__main__":
         '--data_source', help="The URI for you CSV data, like an S3 bucket location.")
     parser.add_argument(
         '--output_uri', help="The URI where output is saved, like an S3 bucket location.")
-    parser.add_argument(
-        '--validation_data_source', help="The URI where output is saved, like an S3 bucket location.")
     args = parser.parse_args()
 
-    predict_wine_quality(args.data_source, args.output_uri, args.validation_data_source)
+    predict_wine_quality(args.data_source, args.output_uri)
