@@ -1,0 +1,188 @@
+{
+    "Cluster": {
+        "Id": "j-1UNJOUIO1Q61Q",
+        "Name": "dmg56-training-job",
+        "Status": {
+            "State": "TERMINATED_WITH_ERRORS",
+            "StateChangeReason": {
+                "Code": "INSTANCE_FAILURE",
+                "Message": "All instances in the job flow are terminated by user"
+            },
+            "Timeline": {
+                "CreationDateTime": "2023-08-03T05:01:40.912000+00:00",
+                "ReadyDateTime": "2023-08-03T05:05:40.790000+00:00",
+                "EndDateTime": "2023-08-03T06:13:51.513000+00:00"
+            }
+        },
+        "Ec2InstanceAttributes": {
+            "Ec2KeyName": "vockey",
+            "Ec2SubnetId": "subnet-00e8018f5d737415d",
+            "RequestedEc2SubnetIds": [
+                "subnet-00e8018f5d737415d"
+            ],
+            "Ec2AvailabilityZone": "us-east-1a",
+            "RequestedEc2AvailabilityZones": [],
+            "IamInstanceProfile": "EMR_EC2_DefaultRole",
+            "EmrManagedMasterSecurityGroup": "sg-02c2688f2c6a614a9",
+            "EmrManagedSlaveSecurityGroup": "sg-0e57e46b9095fbabf",
+            "AdditionalMasterSecurityGroups": [],
+            "AdditionalSlaveSecurityGroups": []
+        },
+        "InstanceCollectionType": "INSTANCE_GROUP",
+        "LogUri": "s3n://dmg56-wine-quality-prediction/logs/",
+        "ReleaseLabel": "emr-6.12.0",
+        "AutoTerminate": false,
+        "TerminationProtected": false,
+        "VisibleToAllUsers": true,
+        "Applications": [
+            {
+                "Name": "Spark",
+                "Version": "3.4.0"
+            },
+            {
+                "Name": "Zeppelin",
+                "Version": "0.10.1"
+            }
+        ],
+        "Tags": [],
+        "ServiceRole": "arn:aws:iam::938357088674:role/EMR_DefaultRole",
+        "NormalizedInstanceHours": 96,
+        "MasterPublicDnsName": "ec2-3-236-175-134.compute-1.amazonaws.com",
+        "Configurations": [],
+        "ScaleDownBehavior": "TERMINATE_AT_TASK_COMPLETION",
+        "KerberosAttributes": {},
+        "ClusterArn": "arn:aws:elasticmapreduce:us-east-1:938357088674:cluster/j-1UNJOUIO1Q61Q",
+        "StepConcurrencyLevel": 1,
+        "PlacementGroups": [],
+        "OSReleaseLabel": "2.0.20230628.0",
+        "BootstrapActions": [],
+        "InstanceGroups": [
+            {
+                "Id": "ig-3UC11ZNOWJMJV",
+                "Name": "Primary",
+                "Market": "ON_DEMAND",
+                "InstanceGroupType": "MASTER",
+                "InstanceType": "m5.xlarge",
+                "RequestedInstanceCount": 1,
+                "RunningInstanceCount": 0,
+                "Status": {
+                    "State": "TERMINATED",
+                    "StateChangeReason": {
+                        "Code": "CLUSTER_TERMINATED",
+                        "Message": "Job flow terminated"
+                    },
+                    "Timeline": {
+                        "CreationDateTime": "2023-08-03T05:01:40.997000+00:00",
+                        "ReadyDateTime": "2023-08-03T05:04:43.832000+00:00",
+                        "EndDateTime": "2023-08-03T06:13:51.479000+00:00"
+                    }
+                },
+                "Configurations": [],
+                "ConfigurationsVersion": 0,
+                "LastSuccessfullyAppliedConfigurations": [],
+                "LastSuccessfullyAppliedConfigurationsVersion": 0,
+                "EbsBlockDevices": [
+                    {
+                        "VolumeSpecification": {
+                            "VolumeType": "gp2",
+                            "SizeInGB": 32
+                        },
+                        "Device": "/dev/sdb"
+                    },
+                    {
+                        "VolumeSpecification": {
+                            "VolumeType": "gp2",
+                            "SizeInGB": 32
+                        },
+                        "Device": "/dev/sdc"
+                    }
+                ],
+                "ShrinkPolicy": {}
+            },
+            {
+                "Id": "ig-REORBFLZKOXI",
+                "Name": "Core",
+                "Market": "ON_DEMAND",
+                "InstanceGroupType": "CORE",
+                "InstanceType": "m5.xlarge",
+                "RequestedInstanceCount": 1,
+                "RunningInstanceCount": 0,
+                "Status": {
+                    "State": "TERMINATED",
+                    "StateChangeReason": {
+                        "Code": "CLUSTER_TERMINATED",
+                        "Message": "Job flow terminated"
+                    },
+                    "Timeline": {
+                        "CreationDateTime": "2023-08-03T05:01:40.997000+00:00",
+                        "ReadyDateTime": "2023-08-03T05:05:40.790000+00:00",
+                        "EndDateTime": "2023-08-03T06:13:51.479000+00:00"
+                    }
+                },
+                "Configurations": [],
+                "ConfigurationsVersion": 0,
+                "LastSuccessfullyAppliedConfigurations": [],
+                "LastSuccessfullyAppliedConfigurationsVersion": 0,
+                "EbsBlockDevices": [
+                    {
+                        "VolumeSpecification": {
+                            "VolumeType": "gp2",
+                            "SizeInGB": 32
+                        },
+                        "Device": "/dev/sdb"
+                    },
+                    {
+                        "VolumeSpecification": {
+                            "VolumeType": "gp2",
+                            "SizeInGB": 32
+                        },
+                        "Device": "/dev/sdc"
+                    }
+                ],
+                "ShrinkPolicy": {}
+            },
+            {
+                "Id": "ig-3QREXPPK039PX",
+                "Name": "Task - 1",
+                "Market": "ON_DEMAND",
+                "InstanceGroupType": "TASK",
+                "InstanceType": "m5.xlarge",
+                "RequestedInstanceCount": 4,
+                "RunningInstanceCount": 0,
+                "Status": {
+                    "State": "TERMINATED",
+                    "StateChangeReason": {
+                        "Code": "CLUSTER_TERMINATED",
+                        "Message": "Job flow terminated"
+                    },
+                    "Timeline": {
+                        "CreationDateTime": "2023-08-03T05:01:40.998000+00:00",
+                        "ReadyDateTime": "2023-08-03T05:05:42.065000+00:00",
+                        "EndDateTime": "2023-08-03T06:13:51.479000+00:00"
+                    }
+                },
+                "Configurations": [],
+                "ConfigurationsVersion": 0,
+                "LastSuccessfullyAppliedConfigurations": [],
+                "LastSuccessfullyAppliedConfigurationsVersion": 0,
+                "EbsBlockDevices": [
+                    {
+                        "VolumeSpecification": {
+                            "VolumeType": "gp2",
+                            "SizeInGB": 32
+                        },
+                        "Device": "/dev/sdb"
+                    },
+                    {
+                        "VolumeSpecification": {
+                            "VolumeType": "gp2",
+                            "SizeInGB": 32
+                        },
+                        "Device": "/dev/sdc"
+                    }
+                ],
+                "ShrinkPolicy": {}
+            }
+        ]
+    }
+}
