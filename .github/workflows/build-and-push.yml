@@ -3,7 +3,7 @@ name: Build and Push Docker Image to GHCR
 on:
   push:
     branches:
-      - main  # Change this to your main branch name, e.g., master
+      - main
 
 jobs:
   build-and-push:
@@ -26,6 +26,6 @@ jobs:
       - name: Build and Push Docker image
         uses: docker/build-push-action@v2
         with:
-          context: .  # Path to the Docker build context (the root of your repository)
+          context: .
           push: true
-          tags: ghcr.io/${{ github.repository_owner }}/dmg56-wine-quality-prediction:latest  # Replace "myapp" with your desired image name
+          tags: ghcr.io/${{ github.repository_owner }}/dmg56-wine-quality-prediction:v1.0
